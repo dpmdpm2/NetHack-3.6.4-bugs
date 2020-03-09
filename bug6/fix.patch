@@ -1,0 +1,13 @@
+diff --git a/src/pline.c b/src/pline.c
+index 7eee2585f..a99f7bb2b 100644
+--- a/src/pline.c
++++ b/src/pline.c
+@@ -435,7 +435,7 @@ void raw_printf
+ VA_DECL(const char *, line)
+ #endif
+ {
+-    char pbuf[3 * BUFSZ];
++    char pbuf[4 * BUFSZ + QBUFSZ]; /* match size in parse_config_line, plus QBUFSZ for additional text */
+     int ln;
+     /* Do NOT use VA_START and VA_END in here... see above */
+

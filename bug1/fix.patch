@@ -1,0 +1,13 @@
+diff --git a/src/options.c b/src/options.c
+index f27eaf2e1..7567b976b 100644
+--- a/src/options.c
++++ b/src/options.c
+@@ -3621,7 +3621,7 @@ boolean tinitial, tfrom_file;
+         long ltmp;
+
+         op = string_for_opt(opts, negated);
+-        ltmp = atol(op);
++        ltmp = (!op || !*op) ? 0L : atol(op);
+         if (negated) {
+             bad_negation(fullname, FALSE);
+             retval = FALSE;

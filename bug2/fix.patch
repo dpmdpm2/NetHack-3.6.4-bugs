@@ -1,0 +1,13 @@
+diff --git a/src/options.c b/src/options.c
+index f27eaf2e1..7567b976b 100644
+--- a/src/options.c
++++ b/src/options.c
+@@ -1810,7 +1810,7 @@ char *tmpstr;
+ {
+     int c = NO_COLOR, a = ATR_NONE;
+     char *tmps, *cs, *amp;
+-    char str[BUFSZ];
++    char str[4 * BUFSZ]; /* match size in parse_config_line */
+ 
+     Sprintf(str, "%s", tmpstr);
+ 

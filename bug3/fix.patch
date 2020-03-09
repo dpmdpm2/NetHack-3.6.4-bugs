@@ -1,0 +1,13 @@
+diff --git a/src/options.c b/src/options.c
+index f27eaf2e1..7567b976b 100644
+--- a/src/options.c
++++ b/src/options.c
+@@ -6108,7 +6108,7 @@ int
+ sym_val(strval)
+ const char *strval;
+ {
+-    char buf[QBUFSZ];
++    char buf[4 * BUFSZ]; /* match size in parse_config_line */
+ 
+     buf[0] = '\0';
+     if (!strval[0] || !strval[1]) { /* empty, or single character */

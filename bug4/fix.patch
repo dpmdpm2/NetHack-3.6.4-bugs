@@ -1,0 +1,13 @@
+diff --git a/src/pline.c b/src/pline.c
+index 7eee2585f..a99f7bb2b 100644
+--- a/src/pline.c
++++ b/src/pline.c
+@@ -114,7 +114,7 @@ VA_DECL(const char *, line)
+ #endif /* USE_STDARG | USE_VARARG */
+ {       /* start of vpline() or of nested block in USE_OLDARG's pline() */
+     static int in_pline = 0;
+-    char pbuf[3 * BUFSZ];
++    char pbuf[4 * BUFSZ + QBUFSZ]; /* match size in struct _config_error_frame.origline, plus QBUFSZ for additional text */
+     int ln;
+     int msgtyp;
+     boolean no_repeat;
